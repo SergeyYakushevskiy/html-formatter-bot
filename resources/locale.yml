@@ -1,0 +1,7 @@
+ru:
+  start: "Добро пожаловать! Я - бот для форматирования HTML-конструкций. Для работы со мной введи команду /help"
+  help: "Отправь мне любое сообщение с HTML-кодом, и я верну тебе готовую HTML-конструкцию"
+
+en:
+  start: "Welcome! I'm a bot for formatting HTML markup. To learn how to use me, enter the /help command."
+  help: "Send me any message with HTML-code, and I'll return a formatted HTML structure."

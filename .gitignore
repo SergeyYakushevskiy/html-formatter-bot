@@ -1,6 +1,14 @@
-# venv
+# Python
 .venv/
+venv/
+**/__pycache__/
 
-#IDE
+
+# IDE
 .vscode/
+.env
+
+# Logging
+logs/
+
 
