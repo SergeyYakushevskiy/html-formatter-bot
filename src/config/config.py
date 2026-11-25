@@ -20,6 +20,7 @@ class Locale(StrEnum):
 class AppSettings(BaseModel):
     name: str = "HTML-formatter bot"
     version: str = "1.0"
+    main_logo: Path = ""
 
 
 class LocaleSettings(BaseModel):

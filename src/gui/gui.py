@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QPlainTextEdit, QWidget, QVBoxLayout
 
 from config.config import Settings
@@ -24,6 +27,8 @@ class GUI(QMainWindow):
 
         self._setup_ui(event_stream)
         self._connect_signals()
+        logo_path = settings.app.main_logo
+        self.setWindowIcon(QIcon(str(logo_path)))
 
     def _setup_ui(self, event_stream: EventStream) -> None:
         self.menu_bar = Menu(self)
