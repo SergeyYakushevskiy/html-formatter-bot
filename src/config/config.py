@@ -24,13 +24,13 @@ class AppSettings(BaseModel):
 
 
 class LocaleSettings(BaseModel):
-    path: Path = Path(".resources/locale.yml")
+    path: Path = Path("locale.yml")
     default: Locale = Locale.RU
 
 
 class LogSettings(BaseModel):
     level: LogLevel = LogLevel.INFO
-    dir: Path = Path("./logs")
+    dir: Path = Path("logs")
 
 
 class BotSettings(BaseModel):

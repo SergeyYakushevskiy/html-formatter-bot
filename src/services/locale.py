@@ -1,11 +1,12 @@
 import yaml
 
+from config import RESOURCES_DIR
 from config.config import Settings
 
 
 class MessageProvider:
     def __init__(self, settings: Settings):
-        with settings.locale.path.open("r", encoding="utf-8") as file:
+        with (RESOURCES_DIR / settings.locale.path).open("r", encoding="utf-8") as file:
             self._messages = yaml.safe_load(file)
         self._locale = settings.locale.default
 

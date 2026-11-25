@@ -36,7 +36,7 @@ def main():
     logger.debug("Create user interface...")
     gui = GUI(settings, event_stream)
 
-    controller = Controller(bot, settings, gui)
+    Controller(bot, settings, gui)
 
     gui.show()
 

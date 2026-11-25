@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 from typing import TextIO
 
+from config import ROOT_DIR
 from config.config import Settings
 
 
@@ -19,7 +20,7 @@ class LoggingConfig:
         )
 
         # File handler
-        log_dir = Path(settings.log.dir)
+        log_dir = Path(ROOT_DIR / settings.log.dir)
         log_dir.mkdir(parents=True, exist_ok=True)
 
         file_handler = logging.FileHandler(

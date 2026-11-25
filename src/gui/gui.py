@@ -4,6 +4,7 @@ from PyQt6.QtCore import pyqtSignal
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QPlainTextEdit, QWidget, QVBoxLayout
 
+from config import ASSETS_DIR
 from config.config import Settings
 from gui.dialog import TokenDialog
 from gui.event import EventStream
@@ -27,7 +28,7 @@ class GUI(QMainWindow):
 
         self._setup_ui(event_stream)
         self._connect_signals()
-        logo_path = settings.app.main_logo
+        logo_path = ASSETS_DIR / settings.app.main_logo
         self.setWindowIcon(QIcon(str(logo_path)))
 
     def _setup_ui(self, event_stream: EventStream) -> None:
