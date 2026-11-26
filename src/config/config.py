@@ -30,7 +30,6 @@ class LocaleSettings(BaseModel):
 
 class LogSettings(BaseModel):
     level: LogLevel = LogLevel.INFO
-    dir: Path = Path("logs")
 
 
 class BotSettings(BaseModel):

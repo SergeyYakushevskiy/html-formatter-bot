@@ -3,7 +3,6 @@
 venv/
 **/__pycache__/
 
-
 # IDE
 .vscode/
 .env
@@ -11,4 +10,8 @@ venv/
 # Logging
 logs/
 
+# Executable
+dist/
+build/
+releases/
 

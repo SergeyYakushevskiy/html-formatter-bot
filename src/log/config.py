@@ -1,11 +1,29 @@
 import logging
 from datetime import datetime
+import os
 from pathlib import Path
 import sys
 from typing import TextIO
 
 from config import ROOT_DIR
 from config.config import Settings
+
+
+def get_log_dir() -> Path:
+    match sys.platform:
+        case "win32":
+            base_dir = Path(os.environ["LOCALAPPDATA"])
+        case "linux":
+            base_dir = Path(
+                os.environ.get("XDG_STATE_HOME", Path.home() / ".local" / "state")
+            )
+        case _:
+            raise OSError(f"Unsupported operating system: {sys.platform}")
+
+    return base_dir / "html-formatter-bot"
+
+
+LOG_DIR = get_log_dir()
 
 
 class LoggingConfig:
@@ -20,7 +38,7 @@ class LoggingConfig:
         )
 
         # File handler
-        log_dir = Path(ROOT_DIR / settings.log.dir)
+        log_dir = Path(LOG_DIR / "html-formatter-bot")
         log_dir.mkdir(parents=True, exist_ok=True)
 
         file_handler = logging.FileHandler(
